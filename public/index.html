@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨 웹앱</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>🌤️ 날씨 확인</h1>
+
+      <form id="weather-form">
+        <label for="city-input" class="sr-only">도시 이름</label>
+        <div class="search-box">
+          <input
+            id="city-input"
+            type="text"
+            placeholder="예: 서울, 도쿄, 파리"
+            autocomplete="off"
+          />
+          <button type="submit">날씨 확인</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <section id="weather-result" class="weather-card hidden">
+        <div class="location-row">
+          <h2 id="city-name">도시</h2>
+          <span id="country-name"></span>
+        </div>
+
+        <div class="main-weather">
+          <div class="temp-box">
+            <span class="temp-label">현재 기온</span>
+            <div id="temperature" class="temperature">--°C</div>
+          </div>
+          <div id="weather-description" class="weather-description">--</div>
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span>습도</span>
+            <strong id="humidity">--%</strong>
+          </div>
+          <div class="meta-item">
+            <span>풍속</span>
+            <strong id="wind-speed">-- km/h</strong>
+          </div>
+          <div class="meta-item">
+            <span>시간</span>
+            <strong id="weather-time">--:--</strong>
+          </div>
+        </div>
+
+        <div class="forecast-section">
+          <h3>앞으로 15일</h3>
+          <div id="forecast-list" class="forecast-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
